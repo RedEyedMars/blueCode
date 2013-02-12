@@ -1,0 +1,11 @@
+def func{ 
+2 + 3;
+5 + 10;
+ }
+
+def dunk {
+func + func
+}
+
+dunk
+

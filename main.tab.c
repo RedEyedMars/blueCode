@@ -408,18 +408,18 @@ union yyalloc
 static const yytype_uint8 yytranslate[] =
 {
        0,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-      12,     2,     2,     2,     2,     2,     2,     2,     2,     2,
+      14,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     9,     8,     2,     7,     2,    10,     2,     2,
-       2,     2,     2,     2,     2,     2,     2,     2,     2,    13,
+       2,     2,    10,     9,     2,     8,     2,    11,     2,     2,
+       2,     2,     2,     2,     2,     2,     2,     2,     2,    15,
        2,     6,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
-       2,     2,     2,    14,     2,    15,     2,     2,     2,     2,
+       2,     2,     2,     7,     2,    12,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
@@ -433,7 +433,7 @@ static const yytype_uint8 yytranslate[] =
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     1,     2,     3,     4,
-       5,    11
+       5,    13
 };
 
 #if YYDEBUG
@@ -449,18 +449,18 @@ static const yytype_uint8 yyprhs[] =
 static const yytype_int8 yyrhs[] =
 {
       17,     0,    -1,    -1,    17,    18,    -1,    17,    21,    -1,
-      17,    20,    -1,    17,     1,    12,    -1,    12,    -1,    13,
-      -1,    -1,    19,    12,    -1,    23,    18,    -1,    11,     4,
-      19,    14,    19,    22,    19,    15,    -1,    22,    18,    -1,
-      22,    18,    23,    -1,    23,    -1,    23,     8,    23,    -1,
+      17,    20,    -1,    17,     1,    14,    -1,    14,    -1,    15,
+      -1,    -1,    19,    14,    -1,    23,    18,    -1,    13,     4,
+      19,     7,    19,    22,    19,    12,    -1,    22,    18,    -1,
+      22,    18,    23,    -1,    23,    -1,    23,     9,    23,    -1,
        4,     6,    23,    -1,     3,    -1,     5,    -1
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    33,    33,    34,    35,    36,    37,    41,    42,    45,
-      45,    48,    50,    53,    54,    55,    58,    59,    60,    61
+       0,    35,    35,    36,    37,    38,    39,    43,    44,    47,
+      47,    50,    52,    55,    56,    57,    60,    61,    62,    63
 };
 #endif
 
@@ -469,8 +469,8 @@ static const yytype_uint8 yyrline[] =
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
-  "$end", "error", "$undefined", "NUM", "NAME", "FUNC", "'='", "'-'",
-  "'+'", "'*'", "'/'", "DEF", "'\\n'", "';'", "'{'", "'}'", "$accept",
+  "$end", "error", "$undefined", "NUM", "NAME", "FUNC", "'='", "'{'",
+  "'-'", "'+'", "'*'", "'/'", "'}'", "DEF", "'\\n'", "';'", "$accept",
   "input", "line", "many_line", "execution", "function_declaration",
   "function_body", "exp", YY_NULL
 };
@@ -481,8 +481,8 @@ static const char *const yytname[] =
    token YYLEX-NUM.  */
 static const yytype_uint16 yytoknum[] =
 {
-       0,   256,   257,   258,   259,   260,    61,    45,    43,    42,
-      47,   261,    10,    59,   123,   125
+       0,   256,   257,   258,   259,   260,    61,   123,    45,    43,
+      42,    47,   125,   261,    10,    59
 };
 # endif
 
@@ -507,7 +507,7 @@ static const yytype_uint8 yydefact[] =
 {
        2,     0,     1,     0,    18,     0,    19,     0,     7,     8,
        3,     5,     4,     0,     6,     0,     9,     0,    11,    17,
-       0,    16,    10,     9,     0,     9,    15,    13,     0,    14,
+       0,    16,     9,    10,     0,     9,    15,    13,     0,    14,
       12
 };
 
@@ -519,19 +519,19 @@ static const yytype_int8 yydefgoto[] =
 
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
-#define YYPACT_NINF -12
+#define YYPACT_NINF -13
 static const yytype_int8 yypact[] =
 {
-     -12,     0,   -12,    -3,   -12,    27,   -12,    30,   -12,   -12,
-     -12,   -12,   -12,    14,   -12,    20,   -12,    20,   -12,    28,
-      17,   -12,   -12,   -12,    16,     4,    28,    20,    -5,    28,
-     -12
+     -13,     0,   -13,   -12,   -13,     2,   -13,    24,   -13,   -13,
+     -13,   -13,   -13,    11,   -13,    28,   -13,    28,   -13,    20,
+      10,   -13,   -13,   -13,     7,     8,    20,    28,    22,    20,
+     -13
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -12,   -12,   -11,     7,   -12,   -12,   -12,    -9
+     -13,   -13,    -7,     5,   -13,   -13,   -13,    -8
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]].  What to do in state STATE-NUM.  If
@@ -540,34 +540,34 @@ static const yytype_int8 yypgoto[] =
 #define YYTABLE_NINF -1
 static const yytype_uint8 yytable[] =
 {
-       2,     3,    18,     4,     5,     6,    19,    22,    21,    14,
-      30,     7,     8,     9,    27,    26,     8,     9,    29,     4,
-       5,     6,    17,     4,     5,     6,     8,     9,    22,    22,
-      24,    23,    28,    15,    16,     0,    17
+       2,     3,    14,     4,     5,     6,    18,    19,    15,    21,
+       4,     5,     6,     7,     8,     9,    26,    22,    27,    29,
+      17,    23,     8,     9,    23,     8,     9,    24,    16,    17,
+      28,     4,     5,     6,    30,     0,    23
 };
 
 #define yypact_value_is_default(yystate) \
-  ((yystate) == (-12))
+  ((yystate) == (-13))
 
 #define yytable_value_is_error(yytable_value) \
   YYID (0)
 
 static const yytype_int8 yycheck[] =
 {
-       0,     1,    13,     3,     4,     5,    15,    12,    17,    12,
-      15,    11,    12,    13,    25,    24,    12,    13,    27,     3,
-       4,     5,     8,     3,     4,     5,    12,    13,    12,    12,
-      23,    14,    25,     6,     4,    -1,     8
+       0,     1,    14,     3,     4,     5,    13,    15,     6,    17,
+       3,     4,     5,    13,    14,    15,    24,     7,    25,    27,
+       9,    14,    14,    15,    14,    14,    15,    22,     4,     9,
+      25,     3,     4,     5,    12,    -1,    14
 };
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
    symbol of state STATE-NUM.  */
 static const yytype_uint8 yystos[] =
 {
-       0,    17,     0,     1,     3,     4,     5,    11,    12,    13,
-      18,    20,    21,    23,    12,     6,     4,     8,    18,    23,
-      19,    23,    12,    14,    19,    22,    23,    18,    19,    23,
-      15
+       0,    17,     0,     1,     3,     4,     5,    13,    14,    15,
+      18,    20,    21,    23,    14,     6,     4,     9,    18,    23,
+      19,    23,     7,    14,    19,    22,    23,    18,    19,    23,
+      12
 };
 
 #define yyerrok		(yyerrstatus = 0)
@@ -1394,63 +1394,63 @@ yyreduce:
         case 6:
 
 /* Line 1788 of yacc.c  */
-#line 37 "main.y"
+#line 39 "main.y"
     { yyerrok;}
     break;
 
   case 11:
 
 /* Line 1788 of yacc.c  */
-#line 48 "main.y"
+#line 50 "main.y"
     {(yyvsp[(1) - (2)].expr)-> execute(); cout << (yyvsp[(1) - (2)].expr)->ret.d << endl;}
     break;
 
   case 12:
 
 /* Line 1788 of yacc.c  */
-#line 50 "main.y"
-    {(yyval.expr) = (yyvsp[(6) - (8)].seq); (yyval.expr)->name = static_name; func_table.push_back((yyval.expr)); clean_func_names();}
+#line 52 "main.y"
+    {(yyval.expr) = (yyvsp[(6) - (8)].seq); (yyval.expr)->name = static_name; cout << "PUSH" << static_name << endl;func_table.push_back((yyval.expr)); clean_func_names();}
     break;
 
   case 14:
 
 /* Line 1788 of yacc.c  */
-#line 54 "main.y"
+#line 56 "main.y"
     { (yyval.seq) = (yyvsp[(1) - (3)].seq)->add(new sequence((yyvsp[(3) - (3)].expr)));}
     break;
 
   case 15:
 
 /* Line 1788 of yacc.c  */
-#line 55 "main.y"
+#line 57 "main.y"
     {(yyval.seq) = new sequence((yyvsp[(1) - (1)].expr));}
     break;
 
   case 16:
 
 /* Line 1788 of yacc.c  */
-#line 58 "main.y"
+#line 60 "main.y"
     {expression* pars[] = {(yyvsp[(1) - (3)].expr), (yyvsp[(3) - (3)].expr)};  (yyval.expr) = new expression(plus_func, pars ,2);}
     break;
 
   case 17:
 
 /* Line 1788 of yacc.c  */
-#line 59 "main.y"
-    {(yyval.expr) = (yyvsp[(3) - (3)].expr); (yyvsp[(3) - (3)].expr) -> name = static_name; func_table.push_back((yyvsp[(3) - (3)].expr)); temp_names.push_back((yyvsp[(1) - (3)].nam));}
+#line 61 "main.y"
+    {(yyval.expr) = (yyvsp[(3) - (3)].expr); (yyvsp[(3) - (3)].expr) -> name = static_name;static_name = previous_name; func_table.push_back((yyvsp[(3) - (3)].expr)); temp_names.push_back((yyvsp[(1) - (3)].nam));}
     break;
 
   case 18:
 
 /* Line 1788 of yacc.c  */
-#line 60 "main.y"
+#line 62 "main.y"
     {(yyval.expr) = new getval((yyvsp[(1) - (1)].val));}
     break;
 
   case 19:
 
 /* Line 1788 of yacc.c  */
-#line 61 "main.y"
+#line 63 "main.y"
     {(yyval.expr) = (yyvsp[(1) - (1)].expr);}
     break;
 
@@ -1688,7 +1688,7 @@ yyreturn:
 
 
 /* Line 2049 of yacc.c  */
-#line 66 "main.y"
+#line 68 "main.y"
 
 
 #include <stdio.h>
@@ -1755,13 +1755,17 @@ int yylex ()
       symbuf[i] = '\0';
       if(!strcmp(symbuf,"def"))
 	return DEF;
+      cout << "INITIAL" << symbuf << endl;
       for(int m=0;m<func_table.size();m++){
+        cout << "\t" << func_table[m]->name << endl;
 	if(func_table[m]->name == symbuf)
 	{
 	  yylval.expr = func_table[m];
 	  return FUNC;
 	}
       }
+      cout << "FINAL" << symbuf << endl;
+      previous_name = static_name;
       static_name = symbuf;
       yylval.nam = symbuf;
       return NAME;

@@ -24,8 +24,10 @@
 %token <expr> FUNC
 
 %right '='
+%right '{'
 %left '-' '+'
 %left '*' '/'
+%left '}'
 %token DEF
 /* Grammar follows */
 
@@ -47,7 +49,7 @@ many_line: | many_line '\n'
 
 execution: exp line {$1-> execute(); cout << $1->ret.d << endl;}
 
-function_declaration: DEF NAME many_line '{' many_line function_body many_line '}' {$$ = $6; $$->name = static_name; func_table.push_back($$); clean_func_names();}
+function_declaration: DEF NAME many_line '{' many_line function_body many_line '}' {$$ = $6; $$->name = static_name; cout << "PUSH" << static_name << endl;func_table.push_back($$); clean_func_names();}
 ;
 
 function_body: function_body line
@@ -56,7 +58,7 @@ function_body: function_body line
 ;
 
 exp: exp '+' exp   {expression* pars[] = {$1, $3};  $$ = new expression(plus_func, pars ,2);}
-     | NAME '=' exp {$$ = $3; $3 -> name = static_name; func_table.push_back($3); temp_names.push_back($1);}
+     | NAME '=' exp {$$ = $3; $3 -> name = static_name;static_name = previous_name; func_table.push_back($3); temp_names.push_back($1);}
      | NUM {$$ = new getval($1);}
      | FUNC {$$ = $1;}
      
@@ -129,13 +131,17 @@ int yylex ()
       symbuf[i] = '\0';
       if(!strcmp(symbuf,"def"))
 	return DEF;
+      cout << "INITIAL" << symbuf << endl;
       for(int m=0;m<func_table.size();m++){
+        cout << "\t" << func_table[m]->name << endl;
 	if(func_table[m]->name == symbuf)
 	{
 	  yylval.expr = func_table[m];
 	  return FUNC;
 	}
       }
+      cout << "FINAL" << symbuf << endl;
+      previous_name = static_name;
       static_name = symbuf;
       yylval.nam = symbuf;
       return NAME;

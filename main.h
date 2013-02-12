@@ -2,6 +2,7 @@
 #include <iterator>
 using namespace std;
 string static_name;
+string previous_name;
 struct expression
 {
   string name;
@@ -100,8 +101,10 @@ void clean_func_names()
     {
       if((*fitr)->name == (*itr))
       {
+	cout << "ERASE" << (*itr) << endl;
 	func_table.erase(fitr);
       }
     }    
   }
+  
 }
